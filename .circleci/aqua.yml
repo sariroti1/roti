@@ -10,7 +10,7 @@ jobs:
       - run:
           command: |
             echo $(circleci tests glob "foo/**/*" "bar/**/*")
-            circleci tests glob "**/*.go" | circleci tests split --split-by=timings
+            cat my_java_test_classnames | circleci tests split --split-by=timings --timings-type=classname
 workflows:
   build-workflow:
     jobs:
